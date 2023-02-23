@@ -44,7 +44,7 @@ public class LoginPage {
 	public WebElement getTexto() {
 		return wait.visibilityOfElement(By.id("modalText"));
 	}
-
+    //para o alert
 	public WebElement getFecharLink() {
 		return wait.visibilityOfElement(By.id("btnCloseModal"));
 	}

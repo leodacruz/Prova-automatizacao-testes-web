@@ -26,7 +26,6 @@ public class DriverManager {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized");
-			options.addArguments("--incognito");
 			driver = new ChromeDriver(options);
 			break;
 			

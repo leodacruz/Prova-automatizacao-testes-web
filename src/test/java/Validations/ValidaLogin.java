@@ -23,7 +23,7 @@ public class ValidaLogin {
 			String message = home.getConhecaNossosRequesitosHiperLink().getText();
 			Assertions.assertEquals("Conheça nossos requisitos", message);
 			//Assertions.assertTrue(home.getConhecaNossosRequesitosHiperLink().isDisplayed());
-			Report.log(Status.PASS, "Home carregado com sucesso: " + message,Screenshot.captureBase64(driver));
+			Report.log(Status.PASS, "Login carregado com sucesso: " + message,Screenshot.captureBase64(driver));
 		} catch (Exception e) {
 			Report.log(Status.FAIL, "Erro ao validar Home: " + e);
 		}
