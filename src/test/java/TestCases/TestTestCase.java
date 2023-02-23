@@ -12,6 +12,7 @@ import com.aventstack.extentreports.Status;
 
 import Tasks.CadastroTask;
 import Tasks.LoginTask;
+import Tasks.MenuTask;
 import framework.TestBase;
 import framework.Report.Report;
 import framework.Report.ReportType;
@@ -23,8 +24,9 @@ public class TestTestCase extends TestBase {
 	private WebDriver driver = this.getDriver();
 
 	private String Properties = "url";
-	private LoginTask homeTask = new LoginTask(this.driver);
+	private LoginTask loginTask = new LoginTask(this.driver);
 	private CadastroTask cadastroTask = new CadastroTask(this.driver);
+	private MenuTask menuTask= new MenuTask(this.driver);
 
 	@BeforeEach
 
@@ -42,12 +44,16 @@ public class TestTestCase extends TestBase {
 		try {
 			Report.createTest("Realizar Validações Frames", ReportType.GROUP);
 			Report.createStep("Acessar Cadastro");
-			homeTask.acessarCadastro();
+			loginTask.acessarCadastro();
 			Report.createStep("Criar a primeira conta");
 			cadastroTask.fazerCadastro("conta1");
-			Report.createStep("Criar a segunda conta");
-			homeTask.acessarCadastro();
-			cadastroTask.fazerCadastro("conta2");
+			Report.createStep("Validar a primeira conta");
+			loginTask.fazerLogin("conta1");
+			menuTask.menuSair();
+			
+		//	Report.createStep("Criar a segunda conta");
+		//	loginTask.acessarCadastro();
+		//	cadastroTask.fazerCadastro("conta2");
 			
 			
 

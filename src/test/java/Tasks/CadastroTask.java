@@ -4,17 +4,25 @@ import org.openqa.selenium.WebDriver;
 
 import PageObjects.CadastroPage;
 import PageObjects.LoginPage;
+import PageObjects.MenuPage;
 import Validations.ValidaCadastro;
 import Validations.ValidaLogin;
+import Validations.ValidaMenu;
 import framework.Utils.FakersGeneration;
 import framework.Utils.FilesOperation;
 
 public class CadastroTask {
 	private WebDriver driver;
+	private LoginPage loginPage;
 	private CadastroPage cadastroPage;
+	private MenuPage menuPage;
+	
 	private FakersGeneration faker;
-	private ValidaCadastro validaCadastro;
+	
 	private ValidaLogin validaLogin;
+	private ValidaCadastro validaCadastro;
+	private ValidaMenu validaMenu;
+	
 
 	public CadastroTask(WebDriver driver) {
 		this.driver = driver;
@@ -22,6 +30,9 @@ public class CadastroTask {
 		faker = new FakersGeneration(this.driver);
 		validaCadastro = new ValidaCadastro(driver);
 		validaLogin= new ValidaLogin(this.driver);
+		validaMenu= new ValidaMenu(this.driver);
+		menuPage= new MenuPage(driver);
+		loginPage= new LoginPage(this.driver);
 	}
 
 	public void fazerCadastro(String conta) {
@@ -68,13 +79,9 @@ public class CadastroTask {
 		cadastroPage.getFecharButton().click();
 		validaLogin.validaHome();
 		
-		//faz o login para confirmar que fez a conta
 		
 		
-		
-		
-		
-		
-		
+	
+			
 	}
 }

@@ -6,20 +6,16 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.Status;
 
 import PageObjects.CadastroPage;
-import framework.Browser.JavaScriptExecutor;
-import framework.Browser.Waits;
 import framework.Report.Report;
 import framework.Report.Screenshot;
 
 public class ValidaCadastro {
 	private WebDriver driver;
 	private CadastroPage cadastroPage;
-	private Waits wait;
 
 	public ValidaCadastro(WebDriver driver) {
 		this.driver = driver;
 		cadastroPage = new CadastroPage(this.driver);
-		wait = new Waits(this.driver);
 	}
 
 	public void validaCadastro() {
