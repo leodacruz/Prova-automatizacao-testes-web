@@ -68,6 +68,6 @@ public class CadastroTask {
 
 		// Fecha o alert e valida que esta na LoginPage
 		cadastroPage.getFecharButton().click();
-		validaLogin.validaHome();
+		validaLogin.validaLogin();
 	}
 }

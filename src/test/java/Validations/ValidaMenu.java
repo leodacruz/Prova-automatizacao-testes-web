@@ -27,4 +27,7 @@ public class ValidaMenu {
 			Report.log(Status.FAIL, "Validação Menu ERRO!!:"+e, Screenshot.captureBase64(driver));
 		}
 	}
+	
+	
+	
 }

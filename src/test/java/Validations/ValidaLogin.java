@@ -18,7 +18,7 @@ public class ValidaLogin {
 		home = new LoginPage(this.driver);
 	}
 
-	public void validaHome() {
+	public void validaLogin() {
 		try {
 			String message = home.getConhecaNossosRequesitosHiperLink().getText();
 			Assertions.assertEquals("Conheça nossos requisitos", message);

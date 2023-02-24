@@ -25,7 +25,7 @@ public class LoginTask {
 	}
 
 	public void acessarCadastro() {
-		validaLogin.validaHome();
+		validaLogin.validaLogin();
 		homePage.getRegistrarButton().click();
 		validaCadastro.validaCadastro();
 	}
