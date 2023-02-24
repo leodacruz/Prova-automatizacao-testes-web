@@ -31,8 +31,7 @@ public class MenuPage {
 
 	// validacao
 	public WebElement getValidaTexto() {
-		WebElement webElement = wait.visibilityOfElement(By
-				.xpath("//div[@class='home__Footer-sc-1auj767-16 eeLkgF']/p[@class='home__Text-sc-1auj767-9 jjmPHj']"));
+		WebElement webElement = wait.visibilityOfElement(By.id("textName"));
 		js.highlight(driver, webElement);
 		return webElement;
 	}

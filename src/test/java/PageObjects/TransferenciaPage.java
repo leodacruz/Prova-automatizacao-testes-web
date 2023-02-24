@@ -54,9 +54,9 @@ public class TransferenciaPage {
 	}
 
 	// validacao
-	public WebElement getNumeroContaTexto() {
+	public WebElement getValidaTexto() {
 		WebElement webElement = wait.visibilityOfElement(By.xpath(
-				"//div[@class='style__ContainerFieldInput-sc-s3e9ea-0 gQAEIG input__child']/label[@class='input__label']"));
+				"//div[@class='transfer__ContainerTexts-sc-1yjpf2r-3 isoOxX']/p[@class='transfer__TextInformation-sc-1yjpf2r-7 eUFZOb']"));
 		js.highlight(driver, webElement);
 		return webElement;
 	}

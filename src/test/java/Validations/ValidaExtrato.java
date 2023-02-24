@@ -22,9 +22,9 @@ public class ValidaExtrato {
 		try {
 			String message = extratoPage.getSaldoDisponivelTexto().getText();
 			Assertions.assertEquals("Saldo disponível", message);
-			Report.log(Status.PASS, "Validação Extrato com sucesso: " + message, Screenshot.captureBase64(driver));
+			Report.log(Status.PASS, "Validação Extrato com sucesso! ", Screenshot.captureBase64(driver));
 		} catch (Exception e) {
-			Report.log(Status.FAIL, "Validação Extrato ERRO!!:"+e, Screenshot.captureBase64(driver));
+			Report.log(Status.FAIL, "Validação Extrato ERRO!!: "+e, Screenshot.captureBase64(driver));
 		}
 	}
 

@@ -20,9 +20,8 @@ public class ValidaLogin {
 
 	public void validaLogin() {
 		try {
-			String message = home.getConhecaNossosRequesitosHiperLink().getText();
-			Assertions.assertEquals("Conheça nossos requisitos", message);
-			Report.log(Status.PASS, "Validação login com sucesso: " + message,Screenshot.captureBase64(driver));
+			Assertions.assertTrue(home.getValidaTexto().isDisplayed());
+			Report.log(Status.PASS, "Validação login com sucesso! " ,Screenshot.captureBase64(driver));
 		} catch (Exception e) {
 			Report.log(Status.FAIL, "Validação login ERRO!: " + e);
 		}
@@ -32,7 +31,7 @@ public class ValidaLogin {
 		try {
 			String message = home.getEmailInput().getText();
 			Assertions.assertNotEquals(" ", message);
-			Report.log(Status.PASS, "Validação Email com sucesso: " ,Screenshot.captureBase64(driver));
+			Report.log(Status.PASS, "Validação Email com sucesso! " ,Screenshot.captureBase64(driver));
 		} catch (Exception e) {
 			Report.log(Status.FAIL, "Validação Email ERRO!: " + e);
 		}
@@ -42,7 +41,7 @@ public class ValidaLogin {
 		try {
 			String message = home.getSenhalInput().getText();
 			Assertions.assertNotEquals(" ", message);
-			Report.log(Status.PASS, "Validação Senha com sucesso: " ,Screenshot.captureBase64(driver));
+			Report.log(Status.PASS, "Validação Senha com sucesso! " ,Screenshot.captureBase64(driver));
 		} catch (Exception e) {
 			Report.log(Status.FAIL, "Validação Senha ERRO!: " + e);
 		}

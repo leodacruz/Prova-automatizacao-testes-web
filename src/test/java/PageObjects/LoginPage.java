@@ -41,9 +41,9 @@ public class LoginPage {
 	}
 
 	// Validação
-	public WebElement getConhecaNossosRequesitosHiperLink() {
+	public WebElement getValidaTexto() {
 		WebElement webElement = wait.visibilityOfElement(
-				By.xpath("//div[@class='login__link']/a[@class='styles__Link-sc-osobjw-0 xzjxU']"));
+				By.xpath("//div[@class='login__link']/p[@class='styles__WarnigWrapper-sc-1ota0lw-0 kpiCJH']"));
 		js.highlight(driver, webElement);
 		return webElement;
 	}
