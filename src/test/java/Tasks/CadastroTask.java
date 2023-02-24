@@ -37,15 +37,10 @@ public class CadastroTask {
 
 	public void fazerCadastro(String conta) {
 		
-		
 		// salvando o email e senha e nome no arquivo properties
-		FilesOperation.setProperties("contas",conta+"nome", faker.getFirstName());
-		
-		FilesOperation.setProperties("contas", conta+"email",
-				FilesOperation.getProperties("contas").getProperty(conta+"nome") + "@Gmail.com");
-		
-		FilesOperation.setProperties("contas", conta+"senha",
-				FilesOperation.getProperties("contas").getProperty(conta+"nome"));
+		FilesOperation.setProperties("contas",conta+"nome",faker.getFirstName());
+		FilesOperation.setProperties("contas", conta+"email",faker.getEmail());
+		FilesOperation.setProperties("contas", conta+"senha",faker.getSenha());
 
 		//email
 		cadastroPage.getEmailInput().sendKeys(FilesOperation.getProperties("contas").getProperty(conta+"email"));
@@ -61,7 +56,6 @@ public class CadastroTask {
 		validaCadastro.validaCadastroInputs("Senha");
 		
 		//confirma senha
-		cadastroPage.getConfirmaSenhaInput().clear();
 		cadastroPage.getConfirmaSenhaInput()
 				.sendKeys(FilesOperation.getProperties("contas").getProperty(conta+"senha"));
 		cadastroPage.getVisibilidadeConfirmaSenhaButton().click();
@@ -75,13 +69,13 @@ public class CadastroTask {
 		cadastroPage.getCadastrarButton().click();
 		validaCadastro.validarContaCadastradaAlert();
 		
+		//PEGANDO O NUMERO DA CONTA
+		String aux=cadastroPage.getAlertTexto().getText();
+		FilesOperation.setProperties("contas",conta+"conta",aux.substring(8, 13) );
+		
 		//fecha o alert
 		cadastroPage.getFecharButton().click();
 		validaLogin.validaHome();
-		
-		
-		
-	
-			
+				
 	}
 }

@@ -31,10 +31,8 @@ public class LoginTask {
 	}
 
 	public void fazerLogin(String conta) {
-		validaHome.validaHome();
 		homePage.getEmailInput().sendKeys(FilesOperation.getProperties("contas").getProperty(conta+"email"));
 		homePage.getSenhalInput().sendKeys(FilesOperation.getProperties("contas").getProperty(conta+"senha"));
-		
 		homePage.getAcessarButton().click();
 		validaMenu.validaMenu();
 	}

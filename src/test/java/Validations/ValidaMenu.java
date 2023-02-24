@@ -20,11 +20,11 @@ public class ValidaMenu {
 
 	public void validaMenu() {
 		try {
-			String message = menuPage.getExtratoButton().getText();
-			Assertions.assertEquals("EXTRATO", message);
-			Report.log(Status.PASS, "Cadastro carregado com sucesso: " + message, Screenshot.captureBase64(driver));
+			String message = menuPage.getValidaTexto().getText();
+			Assertions.assertEquals("Obrigado por escolher o nosso banco", message);
+			Report.log(Status.PASS, "menu com sucesso " + message, Screenshot.captureBase64(driver));
 		} catch (Exception e) {
-			Report.log(Status.FAIL, "Cadastro carregado com sucesso: ", Screenshot.captureBase64(driver));
+			Report.log(Status.FAIL, "falha ao validar menu"+e, Screenshot.captureBase64(driver));
 		}
 	}
 

@@ -46,4 +46,12 @@ public class FakersGeneration {
 
 	}
 	
+	public String getEmail() {
+		return faker.internet().emailAddress();
+	}
+	
+	public String getSenha() {
+		return faker.internet().password();
+	}
+	
 }

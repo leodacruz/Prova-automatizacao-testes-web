@@ -4,33 +4,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import framework.Browser.Waits;
+
 public class MenuPage {
 	private WebDriver driver;
+	private Waits wait;
 
 	public MenuPage(WebDriver driver) {
 		this.driver = driver;
+		wait = new Waits(this.driver);
 	}
 
 	public WebElement getTranferenciaButton() {
-		return driver.findElement(By.id("btn-TRANSFERÊNCIA"));
+		return wait.visibilityOfElement(By.id("btn-TRANSFERÊNCIA"));
 	}
 
 	public WebElement getExtratoButton() {
-		return driver.findElement(By.id("btn-EXTRATO"));
+		return wait.visibilityOfElement(By.id("btn-EXTRATO"));
 	}
 
 	public WebElement getSairButton() {
-		return driver.findElement(By.id("btnExit"));
+		return wait.visibilityOfElement(By.id("btnExit"));
 	}
 
 	// validacao
-	//public WebElement getBemVindoTexto() {
-	//	return driver.findElement(By.xpath(
-	//			"//div[@class='home__ContainerText-sc-1auj767-7 iDA-Ddb']/p[@class='home__Text-sc-1auj767-9 jjmPHj']"));
-	//}
+	public WebElement getValidaTexto() {
+		return wait.visibilityOfElement(By.xpath(
+				"//div[@class='home__Footer-sc-1auj767-16 eeLkgF']/p[@class='home__Text-sc-1auj767-9 jjmPHj']"));
+	}
 
 	public WebElement getContaDigitalTexto() {
-		return driver.findElement(By.id("textAccountNumber"));
+		return wait.visibilityOfElement(By.id("textAccountNumber"));
 	}
 
 }

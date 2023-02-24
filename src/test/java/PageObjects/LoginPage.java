@@ -16,27 +16,27 @@ public class LoginPage {
 	}
 
 	public WebElement getEmailInput() {
-		return driver.findElement(By.xpath("//div[@class ='card__login']/form/div/input[@type='email']"));
+		return wait.visibilityOfElement(By.xpath("//div[@class ='card__login']/form/div/input[@type='email']"));
 	}
 
 	public WebElement getSenhalInput() {
-		return driver.findElement(By.xpath("//div[@class ='card__login']/form/div/div/input[@type='password']"));
+		return wait.visibilityOfElement(By.xpath("//div[@class ='card__login']/form/div/div/input[@type='password']"));
 	}
 
 	public WebElement getAcessarButton() {
-		return driver.findElement(By.xpath(
+		return wait.visibilityOfElement(By.xpath(
 				"//div[@class='login__buttons']/button[@class='style__ContainerButton-sc-1wsixal-0 otUnI button__child']"));
 	}
 
 	public WebElement getRegistrarButton() {
-		return driver.findElement(By.xpath(
+		return wait.visibilityOfElement(By.xpath(
 				"//div[@class='login__buttons']/button[@class='style__ContainerButton-sc-1wsixal-0 ihdmxA button__child']"));
 	}
 
 	// usado para validacao que esta na pagina login
 	public WebElement getConhecaNossosRequesitosHiperLink() {
 
-		return driver.findElement(By.xpath("//div[@class='login__link']/a[@class='styles__Link-sc-osobjw-0 xzjxU']"));
+		return wait.visibilityOfElement(By.xpath("//div[@class='login__link']/a[@class='styles__Link-sc-osobjw-0 xzjxU']"));
 
 	}
 
