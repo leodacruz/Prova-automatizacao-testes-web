@@ -20,13 +20,15 @@ public class ValidaTransferencia {
 	
 	public void validaTransferencia() {
 		try {
-			String message = transferenciaPage.getTexto().getText();
-			Assertions.assertEquals("Saldo disponível", message);
-			Report.log(Status.PASS, "Validação Extrato com sucesso: " + message, Screenshot.captureBase64(driver));
+			String message = transferenciaPage.getNumeroContaTexto().getText();
+			Assertions.assertEquals("Número da conta", message);
+			Report.log(Status.PASS, "Validação Transferencia com sucesso: " + message, Screenshot.captureBase64(driver));
 		} catch (Exception e) {
-			Report.log(Status.FAIL, "Validação Extrato ERRO!!:"+e, Screenshot.captureBase64(driver));
+			Report.log(Status.FAIL, "Validação Transferencia ERRO!!:"+e, Screenshot.captureBase64(driver));
 		}	
 	}
+	
+	
 	
 
 }

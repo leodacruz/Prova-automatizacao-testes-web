@@ -18,7 +18,7 @@ public class ExtratoTask {
 	}
 	
 	
-	public void ExtratoSairDaConta() {
+	public void sairDaConta() {
 	extratoPage.getSairButton().click();
 	validaLogin.validaLogin();
 	}

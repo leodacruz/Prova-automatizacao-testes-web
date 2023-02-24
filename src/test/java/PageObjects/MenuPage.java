@@ -4,11 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import framework.Browser.JavaScriptExecutor;
 import framework.Browser.Waits;
 
 public class MenuPage {
 	private WebDriver driver;
 	private Waits wait;
+	private JavaScriptExecutor js = new JavaScriptExecutor();
 
 	public MenuPage(WebDriver driver) {
 		this.driver = driver;
@@ -29,8 +31,10 @@ public class MenuPage {
 
 	// validacao
 	public WebElement getValidaTexto() {
-		return wait.visibilityOfElement(By.xpath(
-				"//div[@class='home__Footer-sc-1auj767-16 eeLkgF']/p[@class='home__Text-sc-1auj767-9 jjmPHj']"));
+		WebElement webElement = wait.visibilityOfElement(By
+				.xpath("//div[@class='home__Footer-sc-1auj767-16 eeLkgF']/p[@class='home__Text-sc-1auj767-9 jjmPHj']"));
+		js.highlight(driver, webElement);
+		return webElement;
 	}
 
 	public WebElement getContaDigitalTexto() {

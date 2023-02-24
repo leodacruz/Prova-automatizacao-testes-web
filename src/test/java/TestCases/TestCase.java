@@ -41,6 +41,7 @@ public class TestCase extends TestBase {
 	public void validarFrames() {
 
 		try {
+			/*
 			Report.createTest("Criação da Primeira Conta", ReportType.GROUP);
 			Report.createStep("Acessar Cadastro");
 			loginTask.acessarCadastro();
@@ -58,36 +59,41 @@ public class TestCase extends TestBase {
 			Report.createStep("Validar a conta");
 			loginTask.fazerLogin("conta2");
 			menuTask.menuSair();
-			//feito
+			
 			Report.createTest("Consultar Extrato das  Conta1 e Conta2", ReportType.GROUP);
 			Report.createStep("Acessar Conta1");
 			loginTask.fazerLogin("conta1");
 			Report.createStep("Ver extrato Conta1");
 			menuTask.menuExtrato();
 			Report.createStep("Sair Conta1");
-			extratoTask.ExtratoSairDaConta();
-			
+			extratoTask.sairDaConta();
 			Report.createStep("Acessar Conta2");
 			loginTask.fazerLogin("conta2");
 			Report.createStep("Ver extrato Conta2");
 			menuTask.menuExtrato();
 			Report.createStep("Sair Conta2");
-			extratoTask.ExtratoSairDaConta();
-			
-			/*
+			extratoTask.sairDaConta();
+			//feito
+			*/
 			Report.createTest("Transferencia Bancaria Conta1 para Conta2", ReportType.GROUP);
 			Report.createStep("Acessar Conta1");
 			loginTask.fazerLogin("conta1");
 			Report.createStep("Fazer transferencia para Conta1");
+			menuTask.menuTransferencia();
+			transferenciaTask.fazerTransferencia();//parei aqui
 			Report.createStep("Ver extrato Conta1");
+			menuTask.menuExtrato();
 			Report.createStep("Sair Conta1");
+			extratoTask.sairDaConta();
 			
 			Report.createTest("Transferencia Bancaria Conta2 VALIDAÇÃO", ReportType.GROUP);
 			Report.createStep("Acessar Conta2");
 			loginTask.fazerLogin("conta2");
 			Report.createStep("Ver extrato Conta2");
-			Report.createStep("Sair Conta1");
-			*/
+			menuTask.menuExtrato();
+			Report.createStep("Sair Conta2");
+			extratoTask.sairDaConta();
+			
 			
 		} catch (Exception e) {
 			Report.log(Status.FAIL, e.getMessage(), Screenshot.captureBase64(driver));
