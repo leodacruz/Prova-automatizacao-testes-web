@@ -22,10 +22,9 @@ public class ValidaMenu {
 		try {
 			String message = menuPage.getValidaTexto().getText();
 			Assertions.assertEquals("Obrigado por escolher o nosso banco", message);
-			Report.log(Status.PASS, "menu com sucesso " + message, Screenshot.captureBase64(driver));
+			Report.log(Status.PASS, "Validação Menu com sucesso: " + message, Screenshot.captureBase64(driver));
 		} catch (Exception e) {
-			Report.log(Status.FAIL, "falha ao validar menu"+e, Screenshot.captureBase64(driver));
+			Report.log(Status.FAIL, "Validação Menu ERRO!!:"+e, Screenshot.captureBase64(driver));
 		}
 	}
-
 }

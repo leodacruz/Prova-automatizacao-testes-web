@@ -18,43 +18,75 @@ public class ValidaCadastro {
 		cadastroPage = new CadastroPage(this.driver);
 	}
 
+	// @SuppressWarnings("deprecation")
 	public void validaCadastro() {
 		try {
-
 			String message = cadastroPage.getCriarContaComSaldoText().getText();
 			Assertions.assertEquals("Criar conta com saldo ?", message);
-			Report.log(Status.PASS, "Cadastro carregado com sucesso: " + message, Screenshot.captureBase64(driver));
+			// driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS); //mesmo assim
+			// ele nao tira o print certo
+			Report.log(Status.PASS, "Validação Cadastro com sucesso: " + message, Screenshot.captureBase64(driver));
 		} catch (Exception e) {
-			Report.log(Status.FAIL, "Erro ao entrar no Cadastro: " + e);
+			Report.log(Status.FAIL, "Validação Cadastro ERRO!: " + e);
 		}
-
 	}
 
-	public void validaCadastroInputs(String valida) {
+	public void validaCadastroEmailInputs() {
 		try {
 			String message = cadastroPage.getEmailInput().getText();
 			Assertions.assertNotEquals(" ", message);
-			Report.log(Status.PASS, valida + " inserido com sucesso: " + message, Screenshot.captureBase64(driver));
+			Report.log(Status.PASS, "Email inserido com sucesso: " + message, Screenshot.captureBase64(driver));
 		} catch (Exception e) {
-			Report.log(Status.FAIL, (valida + " nao inserido = "+e), Screenshot.captureBase64(driver));
+			Report.log(Status.FAIL, "Email nao inserido: " + e, Screenshot.captureBase64(driver));
+		}
+	}
+
+	public void validaCadastroNomeInputs() {
+		try {
+			String message = cadastroPage.getEmailInput().getText();
+			Assertions.assertNotEquals(" ", message);
+			Report.log(Status.PASS, "Nome inserido com sucesso: " + message, Screenshot.captureBase64(driver));
+		} catch (Exception e) {
+			Report.log(Status.FAIL, "Nome nao inserido: " + e, Screenshot.captureBase64(driver));
+		}
+	}
+
+	public void validaCadastroSenhaInputs() {
+		try {
+			String message = cadastroPage.getEmailInput().getText();
+			Assertions.assertNotEquals(" ", message);
+			Report.log(Status.PASS, "Senha inserido com sucesso: " + message, Screenshot.captureBase64(driver));
+		} catch (Exception e) {
+			Report.log(Status.FAIL, "Senha nao inserido: " + e, Screenshot.captureBase64(driver));
+		}
+	}
+
+	public void validaCadastroConfirmaSenhaInputs() {
+		try {
+			String message = cadastroPage.getEmailInput().getText();
+			Assertions.assertNotEquals(" ", message);
+			Report.log(Status.PASS, "Confirma Senha inserido com sucesso: " + message,
+					Screenshot.captureBase64(driver));
+		} catch (Exception e) {
+			Report.log(Status.FAIL, "Confirma Senha nao inserido: " + e, Screenshot.captureBase64(driver));
 		}
 	}
 
 	public void validaCriarContaSaldoButton() {
 		try {
 			Assertions.assertTrue(cadastroPage.getCriarContaComSaldoAtivadoButton().isDisplayed());
-			Report.log(Status.PASS, "Conta com saldo ativada ", Screenshot.captureBase64(driver));
+			Report.log(Status.PASS, "Criação da conta com saldo ativada ", Screenshot.captureBase64(driver));
 		} catch (Exception e) {
-			Report.log(Status.FAIL, ("Conta com saldo desativada "+e), Screenshot.captureBase64(driver));
+			Report.log(Status.FAIL, ("Criação da conta com saldo desativada " + e), Screenshot.captureBase64(driver));
 		}
 	}
-	
+
 	public void validarContaCadastradaAlert() {
 		try {
 			Assertions.assertTrue(cadastroPage.getAlertTexto().isDisplayed());
 			Report.log(Status.PASS, "Conta Criada com sucesso ", Screenshot.captureBase64(driver));
 		} catch (Exception e) {
-			Report.log(Status.FAIL, ("Erro ao criar a conta "+e), Screenshot.captureBase64(driver));
+			Report.log(Status.FAIL, ("Erro ao criar a conta " + e), Screenshot.captureBase64(driver));
 		}
 	}
 

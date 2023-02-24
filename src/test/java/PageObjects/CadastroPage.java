@@ -51,24 +51,23 @@ public class CadastroPage {
 
 	// usado para validacao
 	public WebElement getCriarContaComSaldoText() {
-		WebElement textoCriacao = wait.visibilityOfElement(By.xpath(
+		WebElement webElement = wait.visibilityOfElement(By.xpath(
 				"//div[@class='styles__ContainerToggle-sc-7fhc7g-2 cJsFYf']/p[@class='styles__ToggleText-sc-7fhc7g-3 eZmSOs']"));
-		js.highlight(driver, textoCriacao);
-		return textoCriacao;
+		js.highlight(driver, webElement);
+		return webElement;
 	}
 
-	//antes de apertar
-	public WebElement getCriarContaComSaldoButton() {
+	// antes de apertar criar Conta com saldo
+	public WebElement getCriarContaComSaldoDesativadoButton() {
 		return wait.visibilityOfElement(By.xpath(
 				"//div[@class='styles__ContainerToggle-sc-7fhc7g-2 cJsFYf']/label [@class='styles__Container-sc-1pngcbh-0 kIwoPV']"));
 	}
-	
-	//depois de apertar
-		public WebElement getCriarContaComSaldoAtivadoButton() {
-			return wait.visibilityOfElement(By.xpath(
-					"//div[@class='styles__ContainerToggle-sc-7fhc7g-2 cJsFYf']/label [@class='styles__Container-sc-1pngcbh-0 hsmFIT']"));
-		}
-	
+
+	// depois de apertar criar Conta com saldo
+	public WebElement getCriarContaComSaldoAtivadoButton() {
+		return wait.visibilityOfElement(By.xpath(
+				"//div[@class='styles__ContainerToggle-sc-7fhc7g-2 cJsFYf']/label [@class='styles__Container-sc-1pngcbh-0 hsmFIT']"));
+	}
 
 	public WebElement getCadastrarButton() {
 		return wait.visibilityOfElement(By.xpath("//div[@class ='card__register']/form/button[@type='submit']"));
@@ -76,7 +75,9 @@ public class CadastroPage {
 
 	// para o alert
 	public WebElement getAlertTexto() {
-		return wait.visibilityOfElement(By.id("modalText"));
+		WebElement webElement = wait.visibilityOfElement(By.id("modalText"));
+		js.highlight(driver, webElement);
+		return webElement;
 	}
 
 	// para o alert
