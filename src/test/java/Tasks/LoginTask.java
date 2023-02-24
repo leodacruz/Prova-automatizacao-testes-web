@@ -8,7 +8,7 @@ import Validations.ValidaCadastro;
 import Validations.ValidaLogin;
 import Validations.ValidaMenu;
 import framework.Utils.FilesOperation;
-private CadastroPage cadastroPage;
+import PageObjects.CadastroPage;
 
 public class LoginTask {
 	private WebDriver driver;
@@ -16,7 +16,8 @@ public class LoginTask {
 	private ValidaLogin validaLogin;
 	private ValidaCadastro validaCadastro;
 	private ValidaMenu validaMenu;
-
+        private CadastroPage cadastroPage;
+	
 	public LoginTask(WebDriver driver) {
 		this.driver = driver;
 		homePage = new LoginPage(this.driver);
