@@ -8,6 +8,7 @@ import Validations.ValidaCadastro;
 import Validations.ValidaLogin;
 import Validations.ValidaMenu;
 import framework.Utils.FilesOperation;
+private CadastroPage cadastroPage;
 
 public class LoginTask {
 	private WebDriver driver;
@@ -22,11 +23,13 @@ public class LoginTask {
 		validaLogin = new ValidaLogin(this.driver);
 		validaCadastro= new ValidaCadastro(this.driver);
 		validaMenu = new ValidaMenu(this.driver);
+		cadastroPage= new CadastroPage(this.driver);
 	}
 
 	public void acessarCadastro() {
 		validaLogin.validaLogin();
 		homePage.getRegistrarButton().click();
+		cadastroPage.getEmailInput().click();//gambiarra para tirar o print certo
 		validaCadastro.validaCadastro();
 	}
 
