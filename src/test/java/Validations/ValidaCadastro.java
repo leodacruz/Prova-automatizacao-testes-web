@@ -43,7 +43,7 @@ public class ValidaCadastro {
 
 	public void validaCadastroNomeInputs() {
 		try {
-			String message = cadastroPage.getEmailInput().getText();
+			String message = cadastroPage.getNomeInput().getText();
 			Assertions.assertNotEquals(" ", message);
 			Report.log(Status.PASS, "Nome inserido com sucesso: " + message, Screenshot.captureBase64(driver));
 		} catch (Exception e) {
@@ -53,7 +53,7 @@ public class ValidaCadastro {
 
 	public void validaCadastroSenhaInputs() {
 		try {
-			String message = cadastroPage.getEmailInput().getText();
+			String message = cadastroPage.getSenhaInput().getText();
 			Assertions.assertNotEquals(" ", message);
 			Report.log(Status.PASS, "Senha inserido com sucesso: " + message, Screenshot.captureBase64(driver));
 		} catch (Exception e) {
@@ -63,7 +63,7 @@ public class ValidaCadastro {
 
 	public void validaCadastroConfirmaSenhaInputs() {
 		try {
-			String message = cadastroPage.getEmailInput().getText();
+			String message = cadastroPage.getConfirmaSenhaInput().getText();
 			Assertions.assertNotEquals(" ", message);
 			Report.log(Status.PASS, "Confirma Senha inserido com sucesso: " + message,
 					Screenshot.captureBase64(driver));

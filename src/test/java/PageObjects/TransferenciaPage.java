@@ -63,7 +63,9 @@ public class TransferenciaPage {
 
 	// alert
 	public WebElement getTextoAlert() {
-		return wait.visibilityOfElement(By.id("modalText"));
+		WebElement webElement = wait.visibilityOfElement(By.id("modalText"));
+		js.highlight(driver, webElement);
+		return webElement;
 	}
 
 	// alert

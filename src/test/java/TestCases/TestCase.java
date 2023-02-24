@@ -41,7 +41,7 @@ public class TestCase extends TestBase {
 	public void validarFrames() {
 
 		try {
-			/*
+			
 			Report.createTest("Criação da Primeira Conta", ReportType.GROUP);
 			Report.createStep("Acessar Cadastro");
 			loginTask.acessarCadastro();
@@ -73,14 +73,14 @@ public class TestCase extends TestBase {
 			menuTask.menuExtrato();
 			Report.createStep("Sair Conta2");
 			extratoTask.sairDaConta();
-			//feito
-			*/
+			
+			
 			Report.createTest("Transferencia Bancaria Conta1 para Conta2", ReportType.GROUP);
 			Report.createStep("Acessar Conta1");
 			loginTask.fazerLogin("conta1");
 			Report.createStep("Fazer transferencia para Conta1");
 			menuTask.menuTransferencia();
-			transferenciaTask.fazerTransferencia();//parei aqui
+			transferenciaTask.fazerTransferencia("conta2");//parei aqui
 			Report.createStep("Ver extrato Conta1");
 			menuTask.menuExtrato();
 			Report.createStep("Sair Conta1");
